@@ -1,1 +1,15 @@
-What a dashboard
+<a href="/admin/logout">Logout</a>
+<br>
+Total de leads: {{totalLeads}}<br>
+Total de cupons ativados: {{totalAtivos}} <br>
+Total de cupons utilizados: {{totalResgatados}}<br>
+Loja com maior número de resgates: <br>
+Loja com menor número de resgates: <br>
+<a href="/admin/dashboard/lojas">Ver relação completa das lojas</a>
+<br><br>
+<h1>Leads</h1>
+<ul>
+{{#each cupons}}
+  <li>{{nome}} {{sobrenome}} | {{idade}} | {{email}} | {{loja.codigo}}</li>
+{{/each}}
+</ul>

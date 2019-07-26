@@ -13,6 +13,7 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const Admin = require('./models/Admin');
+const MongoStore = require('connect-mongo')(session);
 
 
 mongoose
@@ -51,8 +52,13 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.use(session({
   secret: "hackbeet",
+  cookie: { maxAge: 12000000 },
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60
+  })
 }));
 
 passport.serializeUser((user, cb) => {
