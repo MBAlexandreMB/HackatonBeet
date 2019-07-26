@@ -1,15 +1,25 @@
-<a href="/admin/logout">Logout</a>
-<br>
-Total de leads: {{totalLeads}}<br>
-Total de cupons ativados: {{totalAtivos}} <br>
-Total de cupons utilizados: {{totalResgatados}}<br>
-Loja com maior número de resgates: <br>
-Loja com menor número de resgates: <br>
-<a href="/admin/dashboard/lojas">Ver relação completa das lojas</a>
-<br><br>
+<link rel="stylesheet" href="/stylesheets/basicstyles.css">
+{{!-- <a href="/admin/logout">Logout</a> --}}
+
+<div class="content flex-row">
+  <div class="whitebox flex-column">
+    <div id="dashboard-text">
+<h1>Dashboard</h1>
+<p>Total entries in the page: 5</p>
+<p>Bounce rate: 20%</p>
+<p>Total leads: {{totalLeads}}</p>
+<p>Total active coupons: {{totalAtivos}} </p>
+<p>Total redeemed cupons: {{totalResgatados}}</p>
+<p>Least redeemed store: 'Rua Augusta, 1230' </p>
+<p>Most redeemed store: 'Avenida Paulista, 2000'</p>
+{{!-- <a href="/admin/dashboard/lojas">Ver relação completa das lojas</a> --}}
+{{!-- <br><br> --}}
 <h1>Leads</h1>
 <ul>
 {{#each cupons}}
   <li>{{nome}} {{sobrenome}} | {{idade}} | {{email}} | {{loja.codigo}}</li>
 {{/each}}
 </ul>
+</div>
+</div>
+</div>

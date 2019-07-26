@@ -10,7 +10,7 @@ const Cupom = new mongoose.model('cupons', new mongoose.Schema({
   loja: { type: mongoose.Schema.Types.ObjectId, ref: 'lojas' },
   valido: {type: Boolean, default: true},
   iniciado: {type: Boolean, default: false},
-  facebook: String,
+  facebookId: String,
 }, {
     timestamps: true,
   }));

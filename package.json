@@ -8,6 +8,7 @@
     "dev-windows": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@google/maps": "^0.5.5",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "connect-ensure-login": "^0.1.1",
@@ -23,7 +24,9 @@
     "nodemailer": "^6.3.0",
     "nodemailer-sparkpost-transport": "^2.2.0",
     "passport": "^0.4.0",
+    "passport-facebook": "^3.0.0",
     "passport-local": "^1.0.0",
+    "qrcode": "^1.4.1",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {

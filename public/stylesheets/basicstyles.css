@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Roboto&display=swap');
+
+body {
+  background-color: #cc3f57;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  font-family: 'Fredoka One';
+  font-weight: 100;
+}
+
+p {
+  font-family: 'Roboto';
+}
+
+input[type="text"], input[type="password"]  {
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #cc3f57;
+  margin: 10px 0 20px;
+}
+
+.btn {
+  border: none;
+  background-color: #cc3f57;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 7px #ccc;
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-weight: 700;
+  text-align: center;
+}
+
+.btn:hover{
+  background-color: white;
+  border: 1px solid #cc3f57;
+  color: #cc3f57;
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+.margin
+
+.content {
+  width: 100%;
+}
+
+.whitebox {
+  background-color: white;
+  border-radius: 5px;
+  padding: 35px 50px;
+  width: fit-content;
+  color: #cc3f57;
+  box-shadow: 3px 2px 12px black;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.beet {
+  width: 150px;
+  height: auto;
+  padding: 20px;
+}
+
+#cupom-nice-text {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: rgb(2, 159, 235);
+  text-align: center;
+}
+
+#cupom-nice-text span {
+  font-weight: 100;
+  font-size: 1rem;
+  color: rgb(2, 159, 235);
+  text-align: center;
+}
+
+#cupom-nice-text a { 
+  text-decoration: none;
+  color: #cc3f57;
+}
+
+.cupom-see-stores {
+  background-color: #cc3f57;
+}
+
+.commom-text {
+  font-family: 'Roboto';
+  font-size: 1.1rem;
+}
+
+#dashboard-text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  text-align: left;
+}

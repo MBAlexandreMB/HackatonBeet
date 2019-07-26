@@ -2,13 +2,40 @@ const express = require('express');
 const router  = express.Router();
 const Cupom = require('../models/Cupom');
 const Loja = require('../models/Loja');
-const nodemailer = require('nodemailer');
 const bcrypt = require('bcrypt');
+const nodemailer = require('nodemailer');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  res.render('index');
+  
+  const googleMapsClient = require('@google/maps').createClient({
+    key: 'AIzaSyDjEmxNVlkhy-PZATJY2At1mo_tS1s6Os8',
+    Promise: Promise
+  });
+  
+  googleMapsClient.geocode({address: '1600 Amphitheatre Parkway, Mountain View, CA'})
+    .asPromise()
+    .then((response) => {
+      res.render('index', {gmaps: response.json.results});
+      console.log(response.json.results);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
+
+// router.get('/facebook', passport.authenticate('facebook'), (req, res) => {
+
+// });
+
+// router.get('/facebook/callback', passport.authenticate('facebook', {
+//   successRedirect: '/',
+//   failureRedirect: '/facebook/erro'
+// }));
+
+// router.get('/facebook/erro', (req, res, next) => {
+//   res.render('faceerro')
+// })
 
 router.post('/', (req, res, next) => {
   const {nome, sobrenome, email, idade, receita} = req.body;
@@ -25,31 +52,31 @@ router.post('/', (req, res, next) => {
     Cupom.create({nome, sobrenome, email, idade, receita, codigo})
     .then(cupom => {  
 
-      // let transporter = nodemailer.createTransport({
-      //   host: "smtp.sparkpostmail.com",
-      //   port: 587,
-      //   auth: {
-      //     type: 'AUTH PLAIN',
-      //     user: process.env.MAIL_USER,
-      //     pass: process.env.MAIL_PASS,
-      //   }
-      // });
-
-      let transporter = nodemailer.createTransport({
-        host: "smtp.mailtrap.io",
-        port: 2525,
+    let transporter = nodemailer.createTransport({
+        host: "smtp.sparkpostmail.com",
+        port: 587,
         auth: {
-          user: "ab6ff763f83810",
-          pass: "72ed7d5f04aee2"
+          type: 'AUTH PLAIN',
+          user: process.env.MAIL_USER,
+          pass: process.env.MAIL_PASS,
         }
       });
 
+      // let transporter = nodemailer.createTransport({
+      //   host: "smtp.mailtrap.io",
+      //   port: 2525,
+      //   auth: {
+      //     user: "ab6ff763f83810",
+      //     pass: "72ed7d5f04aee2"
+      //   }
+      // });
+
       transporter.sendMail({
-        from: '<beet@ironhackers.dev>',
+        from: '<beet@gin.ink>',
         to: email, 
         subject: 'Você acaba de ganhar um cupom!', 
         text: `${process.env.BASE_URL}/cupom/${codigo}`,
-        html: `<a href="${process.env.BASE_URL}/cupom/${codigo}">Clique aqui para pegar seu cupom!</a>`
+        html: `<a href="${process.env.BASE_URL}/cupom/${codigo}"><img src="https://res.cloudinary.com/ihp2/image/upload/v1564161329/E-mail_Marketing_pcjjz1.png"></a>`
       })
       .then(info => {
         res.render('checkemail', { cupom });
@@ -63,6 +90,7 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/cupom/:codigo', (req, res, next) => {
+
   Cupom.findOneAndUpdate({codigo: req.params.codigo}, {iniciado: true}, {new: true})
   .then(cupom => {
     if(cupom) {
@@ -81,11 +109,15 @@ router.get('/cupom/:codigo', (req, res, next) => {
   .catch(err => console.log(err));
 });
 
-router.post('/cupom/:id', (req, res, next) => {
+router.get('/cupom/:codigo/check', (req, res, next) => {
+  res.render('checkcupom', {codigo: req.params.codigo})
+});
+
+router.post('/cupom/:codigo', (req, res, next) => {
   Loja.findOne({codigo: req.body.codigodaloja})
   .then(loja => {
     if (loja) {
-      Cupom.findByIdAndUpdate(req.params.id, {valido: false, loja: loja._id}, {new: true})
+      Cupom.findOneAndUpdate({codigo: req.params.codigo}, {valido: false, loja: loja._id}, {new: true})
       .then(cupom => res.render('obrigadoporusar', { cupom }))
       .catch(err => console.log(err));
     }
