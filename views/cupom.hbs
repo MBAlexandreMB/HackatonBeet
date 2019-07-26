@@ -1,0 +1,22 @@
+{{#if cupom}}
+  {{#if valido}}
+      {{cupom.nome}} {{cupom.sobrenome}}
+      <br>
+      {{cupom.codigo}}
+      <br><br>
+    Deseja ativá-lo agora? Coloque o código da loja abaixo!
+    <form action="/cupom/{{cupom._id}}" method="POST">
+    <input type="text" name="codigodaloja" placeholder="Código da loja" required/>
+    <button type="submit">Resgatar cupom!</button>
+    </form>
+  {{else}}
+  Desculpe, {{cupom.nome}}, mas seu cupom já foi utilizado! :( <br>
+  Código: {{cupom.codigo}} <br>
+  Válido: {{cupom.valido}} <br>
+  {{#with cupom.loja}}
+  Loja utilizada: {{endereco}}, {{numero}} - {{bairro}} | {{cidade}}/{{estado}}
+  {{/with}}
+  {{/if}}
+{{else}}
+  {{message}}
+{{/if}}

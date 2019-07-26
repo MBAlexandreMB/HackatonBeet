@@ -8,7 +8,8 @@ const Cupom = new mongoose.model('cupons', new mongoose.Schema({
   idade: Number,
   receita: { type: String, enum: ['1', '2', '3', '4'] },
   loja: { type: mongoose.Schema.Types.ObjectId, ref: 'lojas' },
-  valido: Boolean,
+  valido: {type: Boolean, default: true},
+  iniciado: {type: Boolean, default: false},
 }, {
     timestamps: true,
   }));

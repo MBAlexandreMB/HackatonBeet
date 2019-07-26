@@ -1,8 +1,8 @@
 <form action="/" method="POST">
-  <input type="text" name="nome" placeholder="Nome" />
-  <input type="text" name="sobrenome" placeholder="Sobrenome" />
-  <input type="text" name="email" placeholder="E-mail" />
-  <input type="text" name="idade" placeholder="Idade" />
+  <input type="text" name="nome" placeholder="Nome" required/>
+  <input type="text" name="sobrenome" placeholder="Sobrenome" required/>
+  <input type="text" name="email" placeholder="E-mail" required/>
+  <input type="number" name="idade" placeholder="Idade" required/>
   {{message}}
-  <button>Enviar</button>
+  <button type="submit">Enviar</button>
 </form>
