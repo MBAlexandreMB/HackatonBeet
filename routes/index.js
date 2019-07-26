@@ -7,7 +7,21 @@ const bcrypt = require('bcrypt');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  res.render('index');
+  
+  const googleMapsClient = require('@google/maps').createClient({
+    key: 'AIzaSyDjEmxNVlkhy-PZATJY2At1mo_tS1s6Os8',
+    Promise: Promise
+  });
+  
+  googleMapsClient.geocode({address: '1600 Amphitheatre Parkway, Mountain View, CA'})
+    .asPromise()
+    .then((response) => {
+      res.render('index', {gmaps: response.json.results});
+      console.log(response.json.results);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 router.post('/', (req, res, next) => {
@@ -24,16 +38,6 @@ router.post('/', (req, res, next) => {
 
     Cupom.create({nome, sobrenome, email, idade, receita, codigo})
     .then(cupom => {  
-
-      // let transporter = nodemailer.createTransport({
-      //   host: "smtp.sparkpostmail.com",
-      //   port: 587,
-      //   auth: {
-      //     type: 'AUTH PLAIN',
-      //     user: process.env.MAIL_USER,
-      //     pass: process.env.MAIL_PASS,
-      //   }
-      // });
 
       let transporter = nodemailer.createTransport({
         host: "smtp.mailtrap.io",
