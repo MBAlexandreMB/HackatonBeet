@@ -1,8 +1,120 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+$azul: #029feb;
+$rosa: #cc3358;
+$roboto: 'Roboto', sans-serif;
+body{
+  font-family: 'Roboto', sans-serif;
+  margin:0;
+  padding: 0;
+}
+ input, button {
+  border-radius: 5px;
+  border: solid 1px #aaa9a9;
+  background-color: #ffffff;
+  font-family: $roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #aaa9a9;
+  padding: 10px 5px;
+  text-align: left;
+ }
+ button{ 
+  background-color: #cc3358;
+  text-align: center;
+ }
+header {
+  background-color: #cc3358;
+  text-align: center;
+}
+.logo {
+  font-family: 'Fredoka One', cursive;
+  font-size: 30px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin: 0;padding: 0;
+
+  span {
+    color: #72e557;
+  }
+
+}
+footer {
+  background-color: #cc3358;
+  display: flex;
+  width: 100%;
+  padding: 1em;
+  z-index: 100;
+  flex-direction: row;
+  justify-content: space-between;
+  p {
+    padding: 0;
+    margin: 0;
+    line-height: 30px;
+    font-size: 14px;
+  }
 }
 
-a {
-  color: #00B7FF;
+.demo-3 .slide__title {
+  
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  font-family: 'Fredoka One', cursive;
+  font-size: 60px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+ 
+}
+
+  .btn-coupon{
+    padding: 20px 40px;
+    margin-top: 20vh;
+    width: fit-content;
+    background-color: #cc3358;
+    margin: 20px auto;
+    font-family: 'Fredoka One', cursive;
+    border-radius: 5px;
+  
+}
+
+
+.title {
+ 
+  font-family: 'Fredoka One', cursive;
+  font-size: 60px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #029feb;
+}
+
+.form {
+  .left-form {
+    width: 50%;
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-items: flex-end;
+      
+      padding: 2%;
+    }
+  }
+  
 }

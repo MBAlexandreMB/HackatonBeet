@@ -7,7 +7,21 @@ const nodemailer = require('nodemailer');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  res.render('index');
+  
+  const googleMapsClient = require('@google/maps').createClient({
+    key: 'AIzaSyDjEmxNVlkhy-PZATJY2At1mo_tS1s6Os8',
+    Promise: Promise
+  });
+  
+  googleMapsClient.geocode({address: '1600 Amphitheatre Parkway, Mountain View, CA'})
+    .asPromise()
+    .then((response) => {
+      res.render('index', {gmaps: response.json.results});
+      console.log(response.json.results);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 // router.get('/facebook', passport.authenticate('facebook'), (req, res) => {

@@ -8,6 +8,7 @@
     "dev-windows": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@google/maps": "^0.5.5",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "connect-ensure-login": "^0.1.1",
