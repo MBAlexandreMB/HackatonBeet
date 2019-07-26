@@ -1,7 +1,8 @@
 <div class="slideshow">
     <div class="slide">
+         <div class="overlay"></div>
         <div class="mirror" data-tilt>
-             <div class="overlay"></div>
+            
             <div class="mirror__side mirror__side--one">
                 <img class="mirror__img" src="./images/Capa_x-3.png" alt="Some image" />
             </div>
@@ -75,16 +76,7 @@
     <button type="submit">Enviar</button>
 </form>
     </div>
-    <div>
-        <form id="gocoupon" action="/" method="POST">
-    <input type="text" name="nome" placeholder="Nome" required />
-    <input type="text" name="sobrenome" placeholder="Sobrenome" required />
-    <input type="text" name="email" placeholder="E-mail" required />
-    <input type="number" name="idade" placeholder="Idade" required />
-    {{message}}
-    <button type="submit">Enviar</button>
-</form>
-    </div>
+   
 <style>
     #map {
         width: 100%;

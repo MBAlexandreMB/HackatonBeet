@@ -8,6 +8,7 @@ body{
   font-family: 'Roboto', sans-serif;
   margin:0;
   padding: 0;
+  background: #ffffff;
 }
  input, button {
   border-radius: 5px;
@@ -62,9 +63,16 @@ footer {
     margin: 0;
     line-height: 30px;
     font-size: 14px;
+    color: white;
   }
 }
-
+.slide {
+  background:rgba($color: #72e557, $alpha: 0.8);
+}
+.overlay {
+  
+  background:rgba($color: #72e557, $alpha: 0.8);
+}
 .demo-3 .slide__title {
   
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
@@ -88,7 +96,7 @@ footer {
     margin: 20px auto;
     font-family: 'Fredoka One', cursive;
     border-radius: 5px;
-  
+    z-index: 99;
 }
 
 
@@ -108,12 +116,24 @@ footer {
 .form {
   .left-form {
     width: 50%;
+    margin: 0 auto;
     form {
       display: flex;
       flex-direction: column;
       justify-items: flex-end;
       
       padding: 2%;
+      input{
+        margin: 20px;
+        color: white;
+      }
+      button {
+        font-family: 'Fredoka One', cursive;
+        padding: 10px 20px;
+        margin: 20px;
+        color: white;
+        border: none;
+      }
     }
   }
   
