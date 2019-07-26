@@ -70,7 +70,24 @@
   <input type="text" name="sobrenome" placeholder="Sobrenome" required/>
   <input type="text" name="email" placeholder="E-mail" required/>
   <input type="number" name="idade" placeholder="Idade" required/>
+	<br>
+	<input value="1" type="radio" name="receita" />
+	<input value="2" type="radio" name="receita" />
+	<input value="3" type="radio" name="receita" />
+	<input value="4" type="radio" name="receita" />
   {{message}}
   <button type="submit">Enviar</button>
-  or <a href="/facebook" class="btn btn-md btn-primary fb-login-button">Login with Facebook</a>
+  or <a id="fb-btn" href="/facebook" class="btn btn-md btn-primary fb-login-button">Login with Facebook</a>
 </form>
+
+{{!-- 
+<script>
+	console.log('carregou?')
+	const radios = document.getElementsByTagName('input[type=radio]');
+	for(let x = 0; x < radios.length; x += 1) {
+		radios[x].addEventListener('change', () => {
+			console.log(radios[x].value);
+			document.getElementById('fb-btn').href = '/facebook/' + radios[x].value;
+		})
+	}
+</script> --}}

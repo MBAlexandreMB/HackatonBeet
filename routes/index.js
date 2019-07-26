@@ -2,13 +2,29 @@ const express = require('express');
 const router  = express.Router();
 const Cupom = require('../models/Cupom');
 const Loja = require('../models/Loja');
-const nodemailer = require('nodemailer');
+const {sendaMail} = require('../config/email');
 const bcrypt = require('bcrypt');
+const passport = require('../config/passport');
+const nodemailer = require('nodemailer');
+
 
 /* GET home page */
 router.get('/', (req, res, next) => {
   res.render('index');
 });
+
+router.get('/facebook', passport.authenticate('facebook'), (req, res) => {
+
+});
+
+router.get('/facebook/callback', passport.authenticate('facebook', {
+  successRedirect: '/',
+  failureRedirect: '/facebook/erro'
+}));
+
+router.get('/facebook/erro', (req, res, next) => {
+  res.render('faceerro')
+})
 
 router.post('/', (req, res, next) => {
   const {nome, sobrenome, email, idade, receita} = req.body;
@@ -25,7 +41,7 @@ router.post('/', (req, res, next) => {
     Cupom.create({nome, sobrenome, email, idade, receita, codigo})
     .then(cupom => {  
 
-      // let transporter = nodemailer.createTransport({
+    // let transporter = nodemailer.createTransport({
       //   host: "smtp.sparkpostmail.com",
       //   port: 587,
       //   auth: {
