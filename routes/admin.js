@@ -23,4 +23,12 @@ router.post("/login", passport.authenticate("local", {
   passReqToCallback: true
 }));
 
+
+router.get('/facebook', passport.authenticate('facebook'));
+
+router.get('/facebook/callback', passport.authenticate('facebook', {
+  successRedirect: '/',
+  failureRedirect: '/',
+}));
+
 module.exports = router;
