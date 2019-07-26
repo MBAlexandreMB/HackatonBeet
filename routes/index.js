@@ -62,7 +62,7 @@ router.post('/', (req, res, next) => {
         to: email, 
         subject: 'Você acaba de ganhar um cupom!', 
         text: `${process.env.BASE_URL}/cupom/${codigo}`,
-        html: `<a href="${process.env.BASE_URL}/cupom/${codigo}">Clique aqui para pegar seu cupom!</a>`
+        html: `<a href="${process.env.BASE_URL}/cupom/${codigo}"><img src="https://res.cloudinary.com/ihp2/image/upload/v1564161329/E-mail_Marketing_pcjjz1.png"></a>`
       })
       .then(info => {
         res.render('checkemail', { cupom });
