@@ -1,78 +1,72 @@
-<section class="content content--full">
-    <header class="codrops-header">
-        <div class="codrops-links">
-            <a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/BlockRevealers/"
-                title="Previous Demo"><svg class="icon icon--arrow">
-                    <use xlink:href="#icon-arrow"></use>
-                </svg></a>
-            <a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=29492"
-                title="Back to the article"><svg class="icon icon--drop">
-                    <use xlink:href="#icon-drop"></use>
-                </svg></a>
-        </div>
-        <h1 class="codrops-header__title">Mirror Effect</h1>
-        <nav class="demos">
-            <a class="demo" href="index.html">Demo 1</a>
-            <a class="demo" href="index2.html">Demo 2</a>
-            <a class="demo demo--current" href="index3.html">Demo 3</a>
-            <a class="github" href="https://github.com/codrops/MirrorEffect">/Github</a>
-        </nav>
-    </header>
-    <div class="slideshow">
-        <div class="slide">
-            <div class="mirror" data-tilt>
-                <div class="mirror__side mirror__side--one">
-                    <img class="mirror__img" src="./images/veggie3.svg" alt="Some image" />
-                </div>
-                <div class="mirror__side mirror__side--two">
-                    <img class="mirror__img" src="./images/veggie3.svg" alt="Some image" />
-                </div>
+<div class="slideshow">
+    <div class="slide">
+        <div class="mirror" data-tilt>
+             <div class="overlay"></div>
+            <div class="mirror__side mirror__side--one">
+                <img class="mirror__img" src="./images/Capa_x-3.png" alt="Some image" />
             </div>
-            <h2 class="slide__title">Artichoke</h2>
-        </div>
-        <div class="slide">
-            <div class="mirror" data-tilt>
-                <div class="mirror__side mirror__side--one">
-                    <img class="mirror__img" src="./images/veggie2.svg" alt="Some image" />
-                </div>
-                <div class="mirror__side mirror__side--two">
-                    <img class="mirror__img" src="./images/veggie2.svg" alt="Some image" />
-                </div>
+            <div class="mirror__side mirror__side--two">
+                <img class="mirror__img" src="./images/Capa_x-3.png" alt="Some image" />
             </div>
-            <h2 class="slide__title">Avocado</h2>
         </div>
-        <div class="slide">
-            <div class="mirror" data-tilt>
-                <div class="mirror__side mirror__side--one">
-                    <img class="mirror__img" src="./images/veggie1.svg" alt="Some image" />
-                </div>
-                <div class="mirror__side mirror__side--two">
-                    <img class="mirror__img" src="./images/veggie1.svg" alt="Some image" />
-                </div>
+        <h2 class="slide__title ">BEET, DONT <br>
+            KALE MY VIBE </h2>
+            <a class="btn-coupon" href="#gocoupon">I want my cupom</a>
+
+    </div>
+    <div class="slide">
+        <div class="mirror" data-tilt>
+            <div class="mirror__side mirror__side--one">
+                <img class="mirror__img" src="./images/Capa_x-3.png" alt="Some image" />
             </div>
-            <h2 class="slide__title">Lemon</h2>
-        </div>
-        <div class="slide">
-            <div class="mirror" data-tilt>
-                <div class="mirror__side mirror__side--one">
-                    <img class="mirror__img" src="./images/veggie4.svg" alt="Some image" />
-                </div>
-                <div class="mirror__side mirror__side--two">
-                    <img class="mirror__img" src="./images/veggie4.svg" alt="Some image" />
-                </div>
+            <div class="mirror__side mirror__side--two">
+                <img class="mirror__img" src="./images/Capa_x-3.png" alt="Some image" />
             </div>
-            <h2 class="slide__title">Beetroot</h2>
         </div>
-        <nav class="slideshow__nav slideshow__nav--inline">
-            <button class="btn btn--nav">1</button>
+        <h2 class="slide__title">DO U WANNA ONE BYTE?</h2>
+    </div>
+    <div class="slide">
+        <div class="mirror" data-tilt>
+            <div class="mirror__side mirror__side--one">
+                <img class="mirror__img" src="./images/Capa_x-3.png" alt="Some image" />
+            </div>
+            <div class="mirror__side mirror__side--two">
+                <img class="mirror__img" src="./images/Capa_x-3.png" alt="Some image" />
+            </div>
+        </div>
+        <h2 class="slide__title">DO U WANNA ONE BYTE?</h2>
+    </div>
+    <div class="slide">
+        <div class="mirror" data-tilt>
+            <div class="mirror__side mirror__side--one">
+                <img class="mirror__img" src="./images/Capa_x-3.png" alt="Some image" />
+            </div>
+            <div class="mirror__side mirror__side--two">
+                <img class="mirror__img" src="./images/Capa_x-3.png" alt="Some image" />
+            </div>
+        </div>
+        <h2 class="slide__title">DO U WANNA ONE BYTE?</h2>
+    </div>
+    <nav class="slideshow__nav slideshow__nav--inline">
+        {{!-- <button class="btn btn--nav">1</button>
             <button class="btn btn--nav">2</button>
             <button class="btn btn--nav">3</button>
-            <button class="btn btn--nav">4</button>
-        </nav>
-    </div><!-- /slideshow -->
-</section>
+            <button class="btn btn--nav">4</button> --}}
+    </nav>
 
-<form action="/" method="POST">
+
+</div><!-- /slideshow -->
+
+</section>
+  
+  <section class="content content--full">
+
+<!--The div element for the map -->
+<div id="map"></div>
+
+<section class="content content--full form">
+    <div class="left-form">
+        <form id="gocoupon" action="/" method="POST">
     <input type="text" name="nome" placeholder="Nome" required />
     <input type="text" name="sobrenome" placeholder="Sobrenome" required />
     <input type="text" name="email" placeholder="E-mail" required />
@@ -80,6 +74,17 @@
     {{message}}
     <button type="submit">Enviar</button>
 </form>
+    </div>
+    <div>
+        <form id="gocoupon" action="/" method="POST">
+    <input type="text" name="nome" placeholder="Nome" required />
+    <input type="text" name="sobrenome" placeholder="Sobrenome" required />
+    <input type="text" name="email" placeholder="E-mail" required />
+    <input type="number" name="idade" placeholder="Idade" required />
+    {{message}}
+    <button type="submit">Enviar</button>
+</form>
+    </div>
 <style>
     #map {
         width: 100%;
@@ -87,9 +92,7 @@
         background-color: grey;
     }
 </style>
-
-<!--The div element for the map -->
-<div id="map"></div>
+</section>
 <script>
     // Initialize and add the map
     function initMap() {
@@ -102,5 +105,5 @@
         var marker = new google.maps.Marker({ position: uluru, map: map });
     }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjEmxNVlkhy-PZATJY2At1mo_tS1s6Os8&callback=initMap"></script>
-
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjEmxNVlkhy-PZATJY2At1mo_tS1s6Os8&callback=initMap"></script>

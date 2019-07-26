@@ -74,10 +74,8 @@ a:focus {
 
 .codrops-header {
 	position: relative;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: center;
+	display: block;
+	
 	width: 100%;
 	padding: 1em;
 	z-index: 100;
@@ -142,10 +140,9 @@ a:focus {
 	text-align: center;
 }
 
-.content--full {
-	height: 100vh;
+.slideshow {
+	height: 80vh;
 	min-height: 600px;
-	overflow: hidden;
 }
 
 .flexy {
@@ -169,7 +166,7 @@ a:focus {
 .slideshow {
 	position: relative;
 	width: 100%;
-	height: calc(100vh - 5.5em);
+	height: calc(80vh - 5.5em);
 }
 
 .slide {
@@ -205,7 +202,7 @@ a:focus {
 	font-size: 13vw;
 	margin: 0;
 	line-height: 0.8;
-	color: #8dbd2b;
+	color: white;
 	pointer-events: none;
 }
 
@@ -345,7 +342,7 @@ a:focus {
 	right: 0;
 	width: 50%;
 	height: 100%;
-	background: #A8A9C8 url(../img/bg.jpg);
+	
 	background-size: cover;
 }
 
@@ -415,7 +412,7 @@ a:focus {
 }
 
 .demo-3 {
-	background: #2357c1;
+	background: #029feb;
 	color: #fff;
 }
 
@@ -473,6 +470,7 @@ a:focus {
 
 .demo-3 .mirror__img {
 	max-height: 65vh;
+	width: auto;
 }
 
 
