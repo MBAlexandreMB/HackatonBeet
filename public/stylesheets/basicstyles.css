@@ -106,3 +106,10 @@ input[type="text"], input[type="password"]  {
   font-family: 'Roboto';
   font-size: 1.1rem;
 }
+
+#dashboard-text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  text-align: left;
+}
