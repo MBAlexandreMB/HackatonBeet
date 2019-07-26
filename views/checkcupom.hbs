@@ -1,4 +1,10 @@
-    Deseja ativar o cupom agora? Coloque o código da loja abaixo!
-    <form action="/cupom/{{codigo}}" method="POST">
+<link rel="stylesheet" href="/stylesheets/basicstyles.css">
+<div class="content flex-row">
+  <div class="whitebox flex-column">        
+    <h1>Deseja ativar o cupom agora?</h1>
+    <h2>Coloque o código da loja abaixo!</h2> 
+    <form class="flex-column" action="/cupom/{{codigo}}" method="POST">
     <input type="text" name="codigodaloja" placeholder="Código da loja" required/>
-    <button type="submit">Resgatar cupom!</button>
+    <button class="btn" type="submit">Resgatar cupom!</button>
+  </div>
+</div>

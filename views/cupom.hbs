@@ -1,19 +1,32 @@
+<link rel="stylesheet" href="/stylesheets/basicstyles.css">
+
+<div class="content flex-row">
+  <div class="whitebox flex-column">
 {{#if cupom}}
   {{#if valido}}
   <div id="qrcode"></div>
-    Leia o código acima ou <a href="/cupom/{{cupom.codigo}}/check">clique aqui</a>!
-    </form>
+    <div class="flex-row">
+      <img class="beet" src="/images/beets/Capa_x0020_1.png" />
+      <div class="flex-column">
+        <p id="cupom-nice-text">NIIIIIICE! <br> U CAN PRESENT <br>IN THE STORE<br> <span>or <a href="/cupom/{{cupom.codigo}}/check">click here</a></span></p>
+        <a href="" class="btn">SEE ALL <br> THE STORES</a>
+      </div>
+    </div>
   {{else}}
-  Desculpe, {{cupom.nome}}, mas seu cupom já foi utilizado! :( <br>
-  Código: {{cupom.codigo}} <br>
-  Válido: {{cupom.valido}} <br>
+  <p class="commom-text">Desculpe, {{cupom.nome}}, mas seu cupom já foi utilizado! :(</p>
+  <p>
+  <b>Código:</b> {{cupom.codigo}} <br>
+  <b>Válido:</b> {{cupom.valido}} <br>
   {{#with cupom.loja}}
-  Loja utilizada: {{endereco}}, {{numero}} - {{bairro}} | {{cidade}}/{{estado}}
+  <b>Loja utilizada:</b> {{endereco}}, {{numero}} - {{bairro}} | {{cidade}}/{{estado}}
+  </p>
   {{/with}}
   {{/if}}
 {{else}}
   {{message}}
 {{/if}}
+</div>
+</div>
 
 <script src="/javascripts//davidshimjs-qrcodejs-04f46c6/qrcode.js"></script>
 <script>
