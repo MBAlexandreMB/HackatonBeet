@@ -1,13 +1,18 @@
-<form action="/admin/login" method="POST">
+<link rel="stylesheet" href="/stylesheets/basicstyles.css">
+
+<div class="content flex-row">
+  <div class="whitebox flex-column">
+<form class="flex-column" action="/admin/login" method="POST">
   <div>
-    <label for="username">Username:</label>
-    <input type="text" name="username">
+    <input type="text" name="username" placeholder="Username">
   </div>
   <div>
-    <label for="password">Password:</label>
-    <input type="password" name="password">
+    <input type="password" name="password" placeholder="Password">
   </div>
   <div>
-    <input type="submit" value="Log In">
+    <input class="btn" type="submit" value="Log In">
   </div>
 </form>
+
+</div>
+</div>
