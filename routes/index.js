@@ -2,29 +2,26 @@ const express = require('express');
 const router  = express.Router();
 const Cupom = require('../models/Cupom');
 const Loja = require('../models/Loja');
-const {sendaMail} = require('../config/email');
 const bcrypt = require('bcrypt');
-const passport = require('../config/passport');
 const nodemailer = require('nodemailer');
-
 
 /* GET home page */
 router.get('/', (req, res, next) => {
   res.render('index');
 });
 
-router.get('/facebook', passport.authenticate('facebook'), (req, res) => {
+// router.get('/facebook', passport.authenticate('facebook'), (req, res) => {
 
-});
+// });
 
-router.get('/facebook/callback', passport.authenticate('facebook', {
-  successRedirect: '/',
-  failureRedirect: '/facebook/erro'
-}));
+// router.get('/facebook/callback', passport.authenticate('facebook', {
+//   successRedirect: '/',
+//   failureRedirect: '/facebook/erro'
+// }));
 
-router.get('/facebook/erro', (req, res, next) => {
-  res.render('faceerro')
-})
+// router.get('/facebook/erro', (req, res, next) => {
+//   res.render('faceerro')
+// })
 
 router.post('/', (req, res, next) => {
   const {nome, sobrenome, email, idade, receita} = req.body;
@@ -79,6 +76,7 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/cupom/:codigo', (req, res, next) => {
+
   Cupom.findOneAndUpdate({codigo: req.params.codigo}, {iniciado: true}, {new: true})
   .then(cupom => {
     if(cupom) {
@@ -97,11 +95,15 @@ router.get('/cupom/:codigo', (req, res, next) => {
   .catch(err => console.log(err));
 });
 
-router.post('/cupom/:id', (req, res, next) => {
+router.get('/cupom/:codigo/check', (req, res, next) => {
+  res.render('checkcupom', {codigo: req.params.codigo})
+});
+
+router.post('/cupom/:codigo', (req, res, next) => {
   Loja.findOne({codigo: req.body.codigodaloja})
   .then(loja => {
     if (loja) {
-      Cupom.findByIdAndUpdate(req.params.id, {valido: false, loja: loja._id}, {new: true})
+      Cupom.findOneAndUpdate({codigo: req.params.codigo}, {valido: false, loja: loja._id}, {new: true})
       .then(cupom => res.render('obrigadoporusar', { cupom }))
       .catch(err => console.log(err));
     }
